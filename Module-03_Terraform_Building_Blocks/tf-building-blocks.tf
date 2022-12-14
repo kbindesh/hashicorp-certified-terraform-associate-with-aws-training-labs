@@ -1,0 +1,59 @@
+# Terraform Block
+terraform {
+  required_version = "1.3.6"
+  required_providers {
+    aws = {
+      source = "hashicorp/aws"
+      version = "4.46.0"
+    }
+  }
+}
+
+# Provider Block
+provider "aws" {
+  profile = "default" # AWS Credentials Profile configured on your local desktop terminal  $HOME/.aws/credentials
+  region = "us-east-1"
+}
+
+# Variable Block
+variable "sampleVariable" {
+  type = string
+  default = "defaultValue"
+  description = "Some variable description here"
+  sensitive = false
+}
+
+# Resource Block
+resource "aws_instance" "ec2InstanceResource" {
+  ami = "ami-0b0dcb5067f052a63"
+  instance_type = "t2.micro"
+  user_data = file("${path.module}/app1-install.sh")
+  tags = {
+    "Name" = "Nova-WebServer"
+  }
+}
+
+# Output Block
+output "name" {
+  value = "output value here"
+  description = "Output description here"
+}
+
+# Locals Block
+locals {
+  service_name = "forum"
+  owner        = "Community Team"
+}
+
+# Data Sources Block
+data "aws_ami" "example" {
+  most_recent = true
+
+  owners = ["self"]
+  tags = {
+    Name   = "app-server"
+    Tested = "true"
+  }
+}
+
+# Modules Block
