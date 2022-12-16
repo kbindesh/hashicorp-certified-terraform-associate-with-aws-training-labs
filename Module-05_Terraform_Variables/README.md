@@ -1,22 +1,12 @@
-# Infrastructure-as-Code (IaC) Basics
+# 5. Terraform Variables
+  The Terraform language includes a few kinds of blocks for requesting or publishing named values and are as follows:
+  
+  1. Input Variables
+  2. Output Values
+  3. Local Values
 
-## Section-01: Infrastructure-as-Code (IaC) Overview
-- Time it takes for building multiple environments
-- Issues we face with different environments
-- Scale-Up and Scale-Down On-Demand
+## Section-5.1: Inputs Variables
+   
+## Section-5.2: Output Values
 
-## Section-02: Advantages of IaC Tools?
-
-
-## Section-03: Which IaC tools to use?
-Ask yourself below questions in order to find the best IaC tool for you:
-
-- Is your cloud infrastructure going to be vender specific in long term?
-- Are you planning to have a multi-cloud infrastructure?
-- How well does it integrate with the configuration management tools?
-- Price of the complete IaC solution?
-- Does the tool provide you technical support?
-
-## Step-04: IaC vs Configuration Management Tools
-
-
+## Section-5.3: Local Values

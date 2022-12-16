@@ -16,7 +16,7 @@ provider "aws" {
 }
 
 # Variable Block
-variable "sampleVariable" {
+variable "sample_variable" {
   type = string
   default = "defaultValue"
   description = "Some variable description here"
@@ -24,7 +24,7 @@ variable "sampleVariable" {
 }
 
 # Resource Block
-resource "aws_instance" "ec2InstanceResource" {
+resource "aws_instance" "web_server" {
   ami = "ami-0b0dcb5067f052a63"
   instance_type = "t2.micro"
   user_data = file("${path.module}/app1-install.sh")
@@ -34,9 +34,9 @@ resource "aws_instance" "ec2InstanceResource" {
 }
 
 # Output Block
-output "name" {
-  value = "output value here"
-  description = "Output description here"
+output "web_server_public_ip" {
+  value = aws_instance.web_server.public_ip
+  description = "Public IP of the EC2 Instance"
 }
 
 # Locals Block
@@ -46,7 +46,7 @@ locals {
 }
 
 # Data Sources Block
-data "aws_ami" "example" {
+data "aws_ami" "webserver_image_id" {
   most_recent = true
 
   owners = ["self"]
@@ -57,3 +57,6 @@ data "aws_ami" "example" {
 }
 
 # Modules Block
+module "sample_module" {
+  source = "source_of_the_module"
+}

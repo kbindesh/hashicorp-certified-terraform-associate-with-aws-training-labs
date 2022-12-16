@@ -1,14 +1,14 @@
-# Infrastructure-as-Code (IaC) Basics
+# 3. Infrastructure-as-Code (IaC) Basics
 
-## Section-01: Infrastructure-as-Code (IaC) Overview
+## Section-3.1: Infrastructure-as-Code (IaC) Overview
 - Time it takes for building multiple environments
 - Issues we face with different environments
 - Scale-Up and Scale-Down On-Demand
 
-## Section-02: Advantages of IaC Tools?
+## Section-3.2: Advantages of IaC Tools
 
 
-## Section-03: Which IaC tools to use?
+## Section-3.3: Which IaC tools to use?
 Ask yourself below questions in order to find the best IaC tool for you:
 
 - Is your cloud infrastructure going to be vender specific in long term?
